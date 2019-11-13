@@ -3,7 +3,6 @@ from flask import Flask, jsonify, request, make_response
 from flask_restplus import Api, Resource, fields
 
 from distilgpt2_model import predict
-from urllib.parse import parse_qs
 
 #HEADERS = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
