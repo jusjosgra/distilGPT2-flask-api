@@ -4,5 +4,6 @@ services:
   flask:
     build : .
     volumes :
+      - ../scripts:/scripts
     ports:
      - 5000:5000
