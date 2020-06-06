@@ -13,7 +13,7 @@ def predict(text, pred_len=20):
     # Convert indexed tokens in a PyTorch tensor
     tokens_tensor = torch.tensor([indexed_tokens])
 
-    for i in range(pred_len):
+    for _ in range(pred_len):
         # Predict all tokens
         with torch.no_grad():
             outputs = model(tokens_tensor)
@@ -24,8 +24,7 @@ def predict(text, pred_len=20):
         indexed_tokens = indexed_tokens + [predicted_index]
         tokens_tensor = torch.tensor([indexed_tokens])
 
-    predicted_text = tokenizer.decode(indexed_tokens)
-    return predicted_text
+    return tokenizer.decode(indexed_tokens)
 
 if __name__ == "__main__":
 
